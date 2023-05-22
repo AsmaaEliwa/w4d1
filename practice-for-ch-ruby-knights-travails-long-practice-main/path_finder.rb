@@ -3,12 +3,13 @@ class
     attr_reader "position"
     def initialize(position)
 
-         @root_node=position
-         @node=PolyTreeNode.new(root_node)
+            @root_node=position
+            @node=PolyTreeNode.new(root_node)
 
-         @considered_positions=[position]
+            @considered_positions=[position]
 
     end
+
 
    def self.valid_moves(pos)
       new_arr=[]
@@ -33,6 +34,7 @@ class
                new_arr << array
             end
 
+
       end
       print @considered_positions
       new_arr
@@ -40,7 +42,7 @@ class
    end
 
    def build_move_tree
-      queue = [@root_node]
+      queue = [@node]
       until queue.empty?
          node = queue.shift
          new_move_positions(node.val).each do | pos|
@@ -49,12 +51,8 @@ class
             node.add_child(child)
          end
       end
-
+node 
    end
-
-
-
-
 
 
 
