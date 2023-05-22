@@ -3,9 +3,10 @@ class KnightPathFinder
     attr_reader "position"
     def initialize(position)
             @root_node=position
-            # @self.root_node=PolyTreeNode.new(position)
+            node=PolyTreeNode.new(root_node)
+            
             @considered_positions=[position]
-            # build_move_tree(root_node)
+           
     end
     #  def build_move_tree(root_node)
     #  end
