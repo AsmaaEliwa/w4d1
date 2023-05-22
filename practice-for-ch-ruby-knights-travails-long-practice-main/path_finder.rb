@@ -9,8 +9,7 @@ class KnightPathFinder
             @considered_positions=[position]
            
     end
-    #  def build_move_tree(root_node)
-    #  end
+    
 
    def self.valid_moves(pos)
       new_arr=[]
@@ -42,13 +41,6 @@ class KnightPathFinder
    end
 
 
-
-
-
-# def new_move_positions(pos)
-#     if KnightPathFinder.valid_moves
-#     end
-# end
 
 
 
