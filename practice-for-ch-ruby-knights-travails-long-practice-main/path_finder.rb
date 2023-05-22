@@ -1,15 +1,14 @@
 require_relative "polytreenode"
 class KnightPathFinder
-    attr_reader "position"
+    # attr_reader "position"
     def initialize(position)
 
-            @root_node=position
-            @node=PolyTreeNode.new(root_node)
-            
-            @considered_positions=[position]
-           
+         @root_node=position
+         @node=PolyTreeNode.new(@root_node)
+
+         @considered_positions=[position]
+
     end
-    
 
    def self.valid_moves(pos)
       new_arr=[]
@@ -34,15 +33,24 @@ class KnightPathFinder
                new_arr << array
             end
 
-      end
-      print @considered_positions
+        end
+    #   print @considered_positions
       new_arr
 
    end
 
-
-
-
+   def build_move_tree
+      queue = [@node]
+      until queue.empty?
+         node = queue.shift
+         new_move_positions(node.value).each do | pos|
+            child=PolyTreeNode.new(pos)
+            queue << child
+            node.add_child(child)
+         end
+      end
+      node
+   end
 
 
 
